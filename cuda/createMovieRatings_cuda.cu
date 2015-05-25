@@ -3,7 +3,7 @@
 //
 
 #include <cuda_runtime.h>
-#include "createMovieRatings.h"
+#include "createMovieRatings.cuh"
 
 
 __global__ void
