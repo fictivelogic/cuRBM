@@ -19,8 +19,12 @@ createMovieRatingsKernel(const float *weights, const float *hidden_features,
         dot_prod = 0.00; // Initialize the dot product to 0
 
         for (i = 0; i < num_hiddens; i++) {
+            // Indexing: weights[movie_id][rating_id][feature_id]
+            // movie_id - [1, 17771]
+            // rating_id - [0, 4]
+            // feature_id - [0, 99]
             dot_prod += weights[movie_rating_index*num_hidden_features + i]
-                        + hidden_features[i];
+                        + hidden_features[i]; // Do the dot product
         }
         movie_rating_probs[movie_rating_index] = dot_prod;
         movie_rating_index += blockDim.x * gridDim.x;
