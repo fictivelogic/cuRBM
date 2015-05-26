@@ -1,6 +1,3 @@
-#include <cuda_runtime.h>
-#include "createMovieRatings.cuh"
-
 __global__ void
 createMovieRatingsKernel(const float *weights,
     const float *initial_hidden_feature_probs, float* movie_rating_probs,

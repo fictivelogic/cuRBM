@@ -1,6 +1,3 @@
-#include <cuda_runtime.h>
-#include "createFinalHiddenFeatures.cuh"
-
 __global__ void
 createFinalHiddenFeaturesKernel(const float *weights,
     const float *movie_rating_probs, float* final_hidden_feature_probs,
