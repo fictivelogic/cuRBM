@@ -19,9 +19,9 @@ createMovieRatingsKernel(const float *weights,
         dot_prod = 0.00; // Initialize the dot product to 0
 
         for (hidden_id = 0; hidden_id < num_hidden_features; hidden_id++) {
-            // Indexing: weights[movie_id][rating_id][feature_id]
+            // Indexing: weights[movie_id][rating][feature_id]
             // movie_id - [1, 17771]
-            // rating_id - [0, 4]
+            // rating - [0, 4]
             // feature_id - [0, 99]
             // Do the dot product
             dot_prod += weights[movie_rating_id*num_hidden_features

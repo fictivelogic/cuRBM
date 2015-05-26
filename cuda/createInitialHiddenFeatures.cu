@@ -16,10 +16,10 @@ createInitialHiddenFeaturesKernel(const float *weights,
         dot_prod = 0.00; // Initialize the dot product to 0
 
         for (point_id = 0; point_id < num_user_ratings; point_id++) {
-            // Indexing: weights[movie_id][rating_id][feature_id]
-            // movie_id - [1, 500,000]
+            // Indexing: weights[movie_id][rating][feature_id]
+            // user_id - [1, 500,000]
             // movie_id - [1, 17771]
-            // rating_id - [0, 4]
+            // rating - [0, 4]
             // hidden_id - [0, 99]
             user_id = *movie_ratings++;
             movie_id = *movie_ratings++;
