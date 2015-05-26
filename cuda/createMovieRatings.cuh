@@ -1,14 +1,10 @@
-//
-// Created by samuel on 5/24/15.
-//
-
 #ifndef NETFLIX_RBM_CREATEMOVIERATINGS_H
 #define NETFLIX_RBM_CREATEMOVIERATINGS_H
 
-
-// second loop of the pseudo-code
+// Second step of RBM
+// Get movie rating probabilities from initial hidden unit probabilities
 __global__ void createMovieRatingsKernel(const float *weights,
-                                         const float *hidden_features,
+                                         const float *initial_hidden_features,
                                          float* movie_rating_probs,
                                          int num_movies,
                                          int num_hidden_features);
